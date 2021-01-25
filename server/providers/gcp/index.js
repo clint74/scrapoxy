@@ -72,6 +72,10 @@ module.exports = class ProviderGCP {
     return 'PROVISIONING';
   }
 
+  static get_ST_STAGING() {
+    return 'PROVISIONING';
+  }
+
   static get ST_RUNNING() {
     return 'RUNNING';
   }
@@ -195,6 +199,9 @@ module.exports = class ProviderGCP {
           case ProviderGCP.ST_PENDING: {
             return InstanceModel.STARTING;
           }
+	  case ProviderGCP.ST_STAGING: {
+	    return InstanceModel.STARTING;
+	  }
           case ProviderGCP.ST_RUNNING: {
             return InstanceModel.STARTED;
           }
